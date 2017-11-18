@@ -6,7 +6,16 @@ import {I18nSupportService} from "./i18n-support.service";
 import {AppComponent} from './app.component';
 import {WelcomeMsgComponent} from './welcome-msg/welcome-msg.component';
 import {LangSelectorComponent} from './lang-selector/lang-selector.component';
-import { LangSelectorBtnPipe } from './lang-selector/lang-selector-btn.pipe';
+import {LangSelectorBtnPipe} from './lang-selector/lang-selector-btn.pipe';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {
+  MatToolbarModule,
+  MatSnackBarModule,
+  MatCardModule,
+  MatInputModule,
+  MatRadioModule,
+  MatButtonModule
+} from '@angular/material';
 
 /*
 - 여기서 의존성으로 주입할 것이라는 정보를 등록함
@@ -22,7 +31,14 @@ import { LangSelectorBtnPipe } from './lang-selector/lang-selector-btn.pipe';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSnackBarModule,
+    MatCardModule,
+    MatInputModule,
+    MatRadioModule,
+    MatButtonModule
   ],
   providers: [{provide: COMPOSITION_BUFFER_MODE, useValue: false}, I18nSupportService],
   bootstrap: [AppComponent]

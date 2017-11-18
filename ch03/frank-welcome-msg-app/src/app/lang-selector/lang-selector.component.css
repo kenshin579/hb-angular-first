@@ -1,11 +1,20 @@
-.lang-box {
-  width: 8%;
-  display: inline-block;
+/*.lang-box {*/
+  /*width: 8%;*/
+  /*display: inline-block;*/
+  /*margin: 10px 15px;*/
+/*}*/
+
+/*.lang-box img {*/
+  /*width: 120px;*/
+  /*height: 80px;*/
+  /*border: 1px solid darkblue;*/
+/*}*/
+
+.mat-radio-button {
   margin: 10px 15px;
 }
 
-.lang-box img {
-  width: 120px;
-  height: 80px;
+img {
+  width: 18px;
   border: 1px solid darkblue;
 }

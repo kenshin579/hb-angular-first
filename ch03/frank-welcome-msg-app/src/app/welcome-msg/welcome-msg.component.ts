@@ -1,5 +1,6 @@
 import {Component, AfterViewInit} from '@angular/core';
 import {I18nSupportService} from "../i18n-support.service";
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-welcome-msg',
@@ -15,14 +16,15 @@ export class WelcomeMsgComponent implements AfterViewInit {
   /*
   DI. dependency injection
    */
-  constructor(public i18nSupporter: I18nSupportService) { //생성자에 인자로 선언할때 앵귤러는 우리가 new I18nSupportService()를 자동으로 해줌
+  constructor(public i18nSupporter: I18nSupportService, private snackbar: MatSnackBar) { //생성자에 인자로 선언할때 앵귤러는 우리가 new I18nSupportService()를 자동으로 해줌
   }
 
   ngAfterViewInit() {
     const checkTouchedFn = () => {
       console.log("valid:" + this.valid);
       if (this.valid) return;
-      alert('이름을 입력해 주세요');
+      // alert('이름을 입력해 주세요');
+      this.snackbar.open('이름을 입력해 주세요', '확인', {duration: 3000});
     };
 
     setTimeout(checkTouchedFn, WelcomeMsgComponent.CHK_KEYUP_WAIT_SEC)
