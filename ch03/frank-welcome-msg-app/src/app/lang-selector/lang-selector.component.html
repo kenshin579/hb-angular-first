@@ -3,7 +3,7 @@
     <img src="{{'/assets/img/' + lang.flagImgName}}">
     <label *ngIf="langCode === lang.code">선택됨</label>
     <button type="button" (click)="setLangCode(lang.code)"
-            [disabled]="langCode===lang.code">{{lang.name}}
+            [disabled]="langCode===lang.code">{{lang | langSelectorBtn}}
     </button>
   </div>
 </div>

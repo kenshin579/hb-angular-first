@@ -5,8 +5,7 @@ import {Pipe, PipeTransform} from '@angular/core';
 })
 export class LangSelectorBtnPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    return null;
+  transform(lang): any { //return type이 any임
+    return `${lang.name } (${lang.code})`;
   }
-
 }
