@@ -1,0 +1,32 @@
+<div>
+  <button type="button" (click)="isShow = !isShow">전환</button>
+  <label *ngIf="isShow; else hiding">You are special!</label>
+  <ng-template #hiding>
+    <label>I 'm so depressed</label>
+  </ng-template>
+</div>
+
+<div *ngIf="member">
+  <p>Name: {{member.name}}</p>
+  <p>Email: {{member.email}}</p>
+</div>
+
+<ul>
+  <li *ngFor="let animal of animals; let idx = index">
+    {{ idx + 1 }} {{animal}}
+  </li>
+</ul>
+
+<select [(ngModel)]="animal">
+  <option value="">No!</option>
+  <option *ngFor="let a of animals" [value]="a">{{a}}</option>
+</select>
+<span [ngSwitch]="animal">
+    <span *ngSwitchCase="'Dog'">멍멍</span>
+    <span *ngSwitchCase="'Cat'">야옹</span>
+    <span *ngSwitchCase="'Cock'">꼬끼오</span>
+    <span *ngSwitchDefault>에헴!</span>
+</span>
+<p name="member-name">{{ myName | uppercase | honor }}</p>
+<p name="member-name">{{ myName | uppercase | honor | geekMark }}</p>
+<p name="member-name">{{ itsName | uppercase | honor | geekMark:'A' }}</p>
