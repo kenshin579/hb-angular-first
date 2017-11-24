@@ -1,5 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {LogLevel} from "../log-level.enum";
+import {Component, OnInit} from '@angular/core';
 import {MySpecialLoggerService} from "../my-special-logger.service";
 
 @Component({
@@ -8,10 +7,8 @@ import {MySpecialLoggerService} from "../my-special-logger.service";
   styleUrls: ['./mouse-track-zone.component.css']
 })
 export class MouseTrackZoneComponent implements OnInit {
-  @Input() private logger: MySpecialLoggerService;
 
-
-  constructor() {
+  constructor(private logger: MySpecialLoggerService) { // DI 방식
   }
 
   ngOnInit() {

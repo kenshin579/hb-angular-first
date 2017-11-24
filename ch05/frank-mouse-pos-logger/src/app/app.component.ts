@@ -12,7 +12,7 @@ export class AppComponent {
   logger: MySpecialLoggerService; //todo: 이거의 의미는?
 
   constructor() {
-    this.logger = new MySpecialLoggerService(LogLevel.INFO);
+    // this.logger = new MySpecialLoggerService(LogLevel.INFO);
     // this.testLoggerLevel();
   }
 
