@@ -9,12 +9,12 @@ import {LogLevel} from "../log-level.enum";
   selector: 'mpl-mouse-track-zone',
   templateUrl: './mouse-track-zone.component.html',
   styleUrls: ['./mouse-track-zone.component.css'],
-  providers: [MySpecialLoggerService, {provide: LOG_LEVEL_TOKEN, useValue: LogLevel.DEBUG}]
+  // providers: [MySpecialLoggerService, {provide: LOG_LEVEL_TOKEN, useValue: LogLevel.DEBUG}]
 })
 export class MouseTrackZoneComponent implements OnInit {
   logger: LoggerService;
 
-  constructor(@Host() /*@Optional()*/ mySpecialLogger: MySpecialLoggerService, //note: Optional이 있어서 null처리가 됨
+  constructor(@Host() @Optional() mySpecialLogger: MySpecialLoggerService, //note: Optional이 있어서 null처리가 됨
               anotherLogger: AnotherLoggerService) {
     this.logger = mySpecialLogger ? mySpecialLogger : anotherLogger;
   }
