@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-check-list-result',
+  selector: 'cc-check-list-result',
   templateUrl: './check-list-result.component.html',
   styleUrls: ['./check-list-result.component.css']
 })
 export class CheckListResultComponent implements OnInit {
+  checkedCnt: number;
+  checkedResult: string[];
 
-  constructor() { }
+  constructor() {
+    this.initResult();
+  }
 
   ngOnInit() {
   }
 
+  private initResult() {
+    this.checkedCnt = 0;
+    this.checkedResult = [];
+  }
 }
