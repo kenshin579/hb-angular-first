@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'cc-check-list-result',
@@ -36,4 +36,14 @@ export class CheckListResultComponent implements OnInit {
     }
     this.checkedCnt = this.checkedResult.length;
   }
+
+  /*
+  이 코드에서의 문제점
+  1.DOM API의 직접 사용
+  - unit test 작성이 어려워짐
+  2.DOM API사용으로 두 컴포넌간의 겹합도가 높아짐
+
+  앵귤러 방식
+  - 직접적인 DOM 접근 및 관리는 앵귤러에 위임하고 컴포넌트와 템플릿에 로직을 작성하고 뷰와의 관계를 선언하는 것이 할일
+   */
 }
