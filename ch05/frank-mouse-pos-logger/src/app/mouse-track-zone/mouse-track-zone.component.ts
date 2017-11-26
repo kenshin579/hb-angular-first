@@ -1,4 +1,4 @@
-import {Component, Host, OnInit, Optional} from '@angular/core';
+import {Component, Host, OnInit, Optional, ViewEncapsulation} from '@angular/core';
 import {MySpecialLoggerService} from "../my-special-logger.service";
 import {LoggerService} from "../logger-service";
 import {AnotherLoggerService} from "../another-logger.service";
@@ -10,6 +10,7 @@ import {LogLevel} from "../log-level.enum";
   templateUrl: './mouse-track-zone.component.html',
   styleUrls: ['./mouse-track-zone.component.css'],
   // providers: [MySpecialLoggerService, {provide: LOG_LEVEL_TOKEN, useValue: LogLevel.DEBUG}]
+  encapsulation : ViewEncapsulation.Native
 })
 export class MouseTrackZoneComponent implements OnInit {
   logger: LoggerService;
