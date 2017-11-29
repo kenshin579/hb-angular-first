@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'cc-check-list-result',
@@ -6,10 +6,20 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./check-list-result.component.css']
 })
 export class CheckListResultComponent implements OnInit {
-  checkedCnt: number; //todo: 현재 이것을 계산할 방법이 없음
-  @Input() checkedResult: string[]; //자식 콘포넌트가 부모로 정보를 받음
+  _checkedData: string[];
+  checkedCnt: number;
 
-  constructor() { }
+  constructor() {
+  }
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
+
+  @Input()
+  set checkedResult(checkedResult: string[]) { //note: 실제 assign 될때 실행된다
+    if (checkedResult) {
+      this._checkedData = checkedResult;
+      this.checkedCnt = this._checkedData.length;
+    }
+  }
 }
