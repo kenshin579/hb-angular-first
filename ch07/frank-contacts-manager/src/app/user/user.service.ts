@@ -6,7 +6,7 @@ export class UserService {
   constructor(public http: Http) { }
 
   getUser(id: number, callback) {
-    this.http.get(`/api/users/${id}`).map(res => res.json()).subscribe(callback);
+    this.http.get(`/api/users/${id}`).map(res => res.json()).subscribe(callback); //todo: 이거 정확하게 이해 못함
   }
 
   addUser(user: any, callback) {
