@@ -1,4 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {CheckItem} from '../check-item';
 
 @Component({
   selector: 'cc-check-list-result',
@@ -6,25 +7,33 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
   styleUrls: ['./check-list-result.component.css']
 })
 export class CheckListResultComponent implements OnInit {
-  _checkedData: string[];
+  _checkedData: CheckItem[];
   checkedCnt: number;
-  @Output() onSelectedToRemoveItem = new EventEmitter<string>(); //선택된 item을 부모에서 전달하여 삭제하도록 함
+  @Output() onSelectedToRemoveItem = new EventEmitter<number>();
 
   constructor() {
+    this._checkedData = [];
   }
 
   ngOnInit() {
   }
 
   @Input()
-  set checkedResult(checkedResult: string[]) { //note: 실제 assign 될때 실행된다
-    if (checkedResult) {
-      this._checkedData = checkedResult;
-      this.checkedCnt = this._checkedData.length;
+  set checkItem(curItemEvent: CheckItem) {
+    if (!curItemEvent) {
+      return;
     }
+
+    if (curItemEvent.isChecked) {
+      this._checkedData.push(curItemEvent);
+    } else {
+      this._checkedData = this._checkedData.filter(val => val.idx !== curItemEvent.idx);
+    }
+    this.checkedCnt = this._checkedData.length;
   }
 
-  removeMe(idx) {
-    this.onSelectedToRemoveItem.emit(this._checkedData[idx]);
+  onRemove(idx) {
+    this.onSelectedToRemoveItem.emit(this._checkedData[idx].idx); //note: 부모 컴포넌트 (check-list.component)로 보냄
+    this._checkedData = this._checkedData.filter((val, _idx) => _idx !== idx);
   }
 }

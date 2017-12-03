@@ -1,27 +1,22 @@
-# FrankCompComm
+# 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
+목표: 서비스로 상태 공유하기
 
-## Development server
+- ResultGraphComponent는 체크항목의 통계를 내기 위하여 전체 항목 수와, 현재 체크된 항목 수를 알아야 함
+  ㅁ. 체크된 항목의 수: CheckListResultComponent (부모)
+  ㅁ. 전체 항목의 수: CheckListComponent
+  ㅁ. 전체 항목 & 체크된 항목은 서비스로 공유함: ResultGraphComponent에서 사용하도록
+  
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+check-list-data.service
+- 서비스가 체크된 CheckItem item 정보를 다 들고 있음
+ 
+check-list.component.html
+- 
 
-## Code scaffolding
+check-list-result.component
+- 사용자가 checkitem을 선택하면 체크 항목에 리스트로 나옇하게 됨
+  ㅁ.set checkItem이 호출됨
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+result-graph.component
+- check-list-data 서비스에서 정보를 받음
