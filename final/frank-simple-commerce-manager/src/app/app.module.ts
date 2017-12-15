@@ -3,20 +3,20 @@ import {NgModule} from '@angular/core';
 
 
 import {AppComponent} from './app.component';
-import {NavbarComponent} from './navbar/navbar.component';
-import {SidebarComponent} from './sidebar/sidebar.component';
-import {FooterComponent} from './footer/footer.component';
+import {ProductModule} from "./product/product.module";
+import {CategoryModule} from "./category/category.module";
+import {ScmMainModule} from "./scm-main/scm-main.module";
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavbarComponent,
-    SidebarComponent,
-    FooterComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ScmMainModule,
+    ProductModule,
+    CategoryModule
   ],
   providers: [],
   bootstrap: [AppComponent]
