@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CategoryManagementComponent } from './category-management.component';
+import {CategoryManagementComponent} from './category-management.component';
 
 describe('CategoryManagementComponent', () => {
   let component: CategoryManagementComponent;
@@ -8,9 +8,9 @@ describe('CategoryManagementComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CategoryManagementComponent ]
+      declarations: [CategoryManagementComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
