@@ -7,5 +7,4 @@ import {SidebarMenu} from "./scm-main/sidebar/sidebar.component";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  currentMenu: SidebarMenu; //child 컴포넌트에서 @Output으로 받게 됨
 }
