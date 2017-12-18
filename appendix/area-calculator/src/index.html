@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>도형 계산기</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<div class="contents">
+    <h1>도형 넓이 계산기</h1>
+    <div class="row">
+        <h2>원</h2>
+        <label for="circle-radius">반지름: </label>
+        <input type="number" id="circle-radius"/>
+        <button type="button" id="circle-button">계산</button>
+        <br>
+        <label for="circle-area">결과: </label>
+        <input type="number" id="circle-area" readonly/>
+    </div>
+
+    <div class="row">
+        <h2>직사각형</h2>
+        <label for="rectangle-width">넓이:</label>
+        <input type="number" id="rectangle-width"/>
+        <label for="rectangle-height">높이:</label>
+        <input type="number" id="rectangle-height"/>
+        <button type="button" id="rectangle-button">계산</button>
+        <br>
+        <label for="rectangle-area">결과: </label>
+        <input type="number" id="rectangle-area" readonly/>
+    </div>
+</div>
+<script src="../dist/app.js"></script>
+</body>
+</html>
