@@ -76,3 +76,4 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 // import 'intl/locale-data/jsonp/en';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/take';
+import 'rxjs/add/operator/switchMap';

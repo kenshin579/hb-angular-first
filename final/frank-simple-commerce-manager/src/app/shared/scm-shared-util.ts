@@ -1,4 +1,5 @@
 import * as format from 'date-fns/format';
+export declare type ScmDomain = 'product' | 'cateogry';
 
 export class ScmSharedUtil {
   static getCurrentDate() {
